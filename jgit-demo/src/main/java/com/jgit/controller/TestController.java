@@ -1,4 +1,4 @@
-package bakup; /**
+package com.jgit.controller; /**
  * @Classname
  * @Description TODO
  * @Date 2020/7/13
@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.*;
 import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,21 +19,29 @@ import java.util.List;
 
 
 /**
- * bakup.TestController 测试
+ * com.jgit.controller.TestController 测试
  *
  * @author
  * @date 2020/3/31
  */
-@RestController
+@Controller
 @Slf4j
 public class TestController {
 
-    public static void main(String[] args) {
-    new TestController().cloneBranch();
+    @GetMapping("/index")
+    public String index() {
+        return "index";
     }
+
+    @GetMapping("/msg")
+    public String msg() {
+        return "msg";
+    }
+
+
     @RequestMapping("test")
     public String sayHello() {
-        cloneBranch();
+//        cloneBranch();
         //checkOutBranch();
         //createNewBranch();
         //delectBranch();
