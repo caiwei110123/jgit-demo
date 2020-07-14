@@ -33,6 +33,17 @@ public class TestController {
         return "index";
     }
 
+    @GetMapping("/index1")
+    public String index1() {
+        return "progress/index";
+    }
+
+
+    @GetMapping("/index2")
+    public String index2() {
+        return "progress/index1";
+    }
+
     @GetMapping("/msg")
     public String msg() {
         return "msg";
